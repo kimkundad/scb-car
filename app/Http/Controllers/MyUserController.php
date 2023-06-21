@@ -20,6 +20,10 @@ class MyUserController extends Controller
     public function index()
     {
         $count = User::whereNotIn('users.id', [1,2])->count();
+        $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
+
+        $percent = (($count2 * 100)/ $count) / 100;
+   
         //
         $objs = DB::table('users')->select(
             'users.*',
@@ -35,7 +39,7 @@ class MyUserController extends Controller
 
             $objs->setPath('');
 
-        return view('admin.MyUser.index', compact('objs', 'count'));
+        return view('admin.MyUser.index', compact('objs', 'count', 'count2', 'percent'));
     }
 
 
@@ -47,6 +51,9 @@ class MyUserController extends Controller
           $search = $request->get('search');
 
           $count = User::whereNotIn('users.id', [1,2])->count();
+        $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
+
+        $percent = (($count2 * 100)/ $count) / 100;
 
           $objs = DB::table('users')->select(
             'users.*',
@@ -66,7 +73,7 @@ class MyUserController extends Controller
         return view('admin.MyUser.search', compact(
             'objs',
             'search',
-            'count'
+            'count', 'count2', 'percent'
         ));
 
     }
@@ -74,6 +81,9 @@ class MyUserController extends Controller
     public function dealer_search(Request $request){
 
         $count = User::whereNotIn('users.id', [1,2])->count();
+        $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
+
+        $percent = (($count2 * 100)/ $count) / 100;
 
         $this->validate($request, [
             'search' => 'required'
@@ -98,7 +108,8 @@ class MyUserController extends Controller
         return view('admin.MyUser.search2', compact(
             'objs',
             'search',
-            'count'
+            'count',
+             'count2', 'percent'
         ));
 
     }

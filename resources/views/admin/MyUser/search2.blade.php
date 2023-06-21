@@ -42,6 +42,46 @@
                         <!--end::Breadcrumb-->
                     </div>
                     <!--end::Page title-->
+                    <div class="card card-flush  " style="height:95px">
+                        <div class="card-body pt-2 pb-4 d-flex flex-wrap align-items-center" >
+                            <!--begin::Chart-->
+                            <div class="d-flex flex-center me-5 pt-2">
+                                <div id="kt_card_widget_17_chartx" style="min-width: 70px; min-height: 70px" data-kt-size="70" data-kt-line="11"></div>
+                            </div>
+                            <!--end::Chart-->
+                            <!--begin::Labels-->
+                            <div class="d-flex flex-column content-justify-center flex-row-fluid">
+                                <!--begin::Label-->
+                                <div class="d-flex fw-semibold align-items-center">
+                                    <!--begin::Bullet-->
+                                    <div class="bullet w-8px h-3px rounded-2 me-3" style="background-color: #E4E6EF"></div>
+                                    <!--end::Bullet-->
+                                    <!--begin::Label-->
+                                    <div class="text-gray-500 flex-grow-1 me-4">ลูกค้าทั้งหมด</div>
+                                    <!--end::Label-->
+                                    <!--begin::Stats-->
+                                    <div class="fw-bolder text-gray-700 text-xxl-end">{{ ($count) }}</div>
+                                    <!--end::Stats-->
+                                </div>
+                                <!--end::Label-->
+                                <!--begin::Label-->
+                                <div class="d-flex fw-semibold align-items-center my-3">
+                                    <!--begin::Bullet-->
+                                    <div class="bullet w-8px h-3px rounded-2 bg-primary me-3"></div>
+                                    <!--end::Bullet-->
+                                    <!--begin::Label-->
+                                    <div class="text-gray-500 flex-grow-1 me-4">เข้าร่วมแล้ว</div>
+                                    <!--end::Label-->
+                                    <!--begin::Stats-->
+                                    <div class="fw-bolder text-gray-700 text-xxl-end">{{ ($count2) }}</div>
+                                    <!--end::Stats-->
+                                </div>
+                                <!--end::Label-->
+                               
+                            </div>
+                            <!--end::Labels-->
+                        </div>
+                    </div>
                     <!--begin::Actions-->
                     <div class="d-flex align-items-center gap-2 gap-lg-3">
                         <a href="{{ url('orders_export') }}" class="btn btn-sm fw-bold btn-success" >
@@ -225,7 +265,68 @@
 
 
 <script type="text/javascript">
-   
-</script>
+
+    // Class definition
+    var KTCardsWidget17 = function () {
+        // Private methods
+        var initChart = function() {
+            var el = document.getElementById('kt_card_widget_17_chartx'); 
+    
+            if (!el) {
+                return;
+            }
+    
+            var options = {
+                size: el.getAttribute('data-kt-size') ? parseInt(el.getAttribute('data-kt-size')) : 70,
+                lineWidth: el.getAttribute('data-kt-line') ? parseInt(el.getAttribute('data-kt-line')) : 11,
+                rotate: el.getAttribute('data-kt-rotate') ? parseInt(el.getAttribute('data-kt-rotate')) : 145,            
+                //percent:  el.getAttribute('data-kt-percent') ,
+            }
+    
+            var canvas = document.createElement('canvas');
+            var span = document.createElement('span'); 
+                
+            if (typeof(G_vmlCanvasManager) !== 'undefined') {
+                G_vmlCanvasManager.initElement(canvas);
+            }
+    
+            var ctx = canvas.getContext('2d');
+            canvas.width = canvas.height = options.size;
+    
+            el.appendChild(span);
+            el.appendChild(canvas);
+    
+            ctx.translate(options.size / 2, options.size / 2); // change center
+            ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+    
+            //imd = ctx.getImageData(0, 0, 240, 240);
+            var radius = (options.size - options.lineWidth) / 2;
+    
+            var drawCircle = function(color, lineWidth, percent) {
+                percent = Math.min(Math.max(0, percent || 1), 1);
+                ctx.beginPath();
+                ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+                ctx.strokeStyle = color;
+                ctx.lineCap = 'round'; // butt, round or square
+                ctx.lineWidth = lineWidth
+                ctx.stroke();
+            };
+    
+            // Init 
+            drawCircle('#E4E6EF', options.lineWidth, 100 / 100); 
+            drawCircle(KTUtil.getCssVariableValue('--kt-primary'), options.lineWidth, {{ $percent }});
+        }
+    
+        // Public methods
+        return {
+            init: function () {
+                initChart();
+            }   
+        }
+    }();
+    
+    
+       
+    </script>
 
 @stop('scripts')
