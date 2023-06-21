@@ -16,6 +16,8 @@ use App\Http\Controllers\MyUserController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/checkin', [App\Http\Controllers\CheckController::class, 'checkin']);
+Route::get('/checkin_404', [App\Http\Controllers\CheckController::class, 'checkin_404']);
+
 Route::post('/api/api_post_status_user', [App\Http\Controllers\HomeController::class, 'api_post_status_user']);
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -9,6 +9,10 @@ use App\Models\User;
 class CheckController extends Controller
 {
     //
+    public function checkin_404(){
+        return view('checkin_404');
+    }
+
     public function checkin(Request $request){
 
         $code = $request['code'];
