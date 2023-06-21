@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        if(Auth::check()){
+          return redirect(url('admin/MyUser'));
+        }else{
+          return view('home');
+        }
+
+        
     }
 
     public function api_post_status_user(Request $request){
