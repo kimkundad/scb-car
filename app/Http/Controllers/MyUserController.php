@@ -25,9 +25,9 @@ class MyUserController extends Controller
         if($count2 > 0){
             $percent = (($count2 * 100)/ $count) / 100;
         }else{
-            $percent = 0.0;
+            $percent = 0.0001;
         }
-        
+    
    
         //
         $objs = DB::table('users')->select(
@@ -61,7 +61,7 @@ class MyUserController extends Controller
         if($count2 > 0){
             $percent = (($count2 * 100)/ $count) / 100;
         }else{
-            $percent = 0.0;
+            $percent = 0.0001;
         }
 
           $objs = DB::table('users')->select(
@@ -95,7 +95,7 @@ class MyUserController extends Controller
         if($count2 > 0){
             $percent = (($count2 * 100)/ $count) / 100;
         }else{
-            $percent = 0.0;
+            $percent = 0.0001;
         }
 
         $this->validate($request, [
