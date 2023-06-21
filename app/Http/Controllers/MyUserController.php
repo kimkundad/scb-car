@@ -22,7 +22,12 @@ class MyUserController extends Controller
         $count = User::whereNotIn('users.id', [1,2])->count();
         $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
 
-        $percent = (($count2 * 100)/ $count) / 100;
+        if($count2 > 0){
+            $percent = (($count2 * 100)/ $count) / 100;
+        }else{
+            $percent = 0.0;
+        }
+        
    
         //
         $objs = DB::table('users')->select(
@@ -53,7 +58,11 @@ class MyUserController extends Controller
           $count = User::whereNotIn('users.id', [1,2])->count();
         $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
 
-        $percent = (($count2 * 100)/ $count) / 100;
+        if($count2 > 0){
+            $percent = (($count2 * 100)/ $count) / 100;
+        }else{
+            $percent = 0.0;
+        }
 
           $objs = DB::table('users')->select(
             'users.*',
@@ -83,7 +92,11 @@ class MyUserController extends Controller
         $count = User::whereNotIn('users.id', [1,2])->count();
         $count2 = User::where('status', 1)->whereNotIn('users.id', [1,2])->count();
 
-        $percent = (($count2 * 100)/ $count) / 100;
+        if($count2 > 0){
+            $percent = (($count2 * 100)/ $count) / 100;
+        }else{
+            $percent = 0.0;
+        }
 
         $this->validate($request, [
             'search' => 'required'
