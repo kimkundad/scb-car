@@ -1,0 +1,26 @@
+body, body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prompt', sans-serif !important;
+  }
+  span, p , li ,strong, option , label, input, a, b {
+    font-family: 'Prompt', sans-serif !important;
+  }
+  .btn.btn-primary {
+    border-color: #67079c;
+    background-color: #67079c;
+}
+.btn.btn-primary:hover {
+    border-color: #67079c;
+    background-color: #67079c;
+}
+.btn-check:active+.btn.btn-primary, .btn-check:checked+.btn.btn-primary, .btn.btn-primary.active, .btn.btn-primary.show, .btn.btn-primary:active:not(.btn-active), .btn.btn-primary:focus:not(.btn-active), .btn.btn-primary:hover:not(.btn-active), .show>.btn.btn-primary {
+
+    border-color: #67079c;
+    background-color: #67079c!important;
+}
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: .925rem;
+    color: #f1416c;
+}
