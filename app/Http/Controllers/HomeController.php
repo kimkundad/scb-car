@@ -48,6 +48,7 @@ class HomeController extends Controller
            return response()->json([
             'data' => [
               'success' => 'success',
+              'date_time' => date("Y-m-d H:i:s")
             ]
           ]);
 
