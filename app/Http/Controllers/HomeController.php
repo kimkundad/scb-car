@@ -42,6 +42,7 @@ class HomeController extends Controller
 
            $objs = User::find($id);
            $objs->status = 1;
+           $objs->updated_at = date("Y-m-d H:i:s");
            $objs->save();
 
            return response()->json([
