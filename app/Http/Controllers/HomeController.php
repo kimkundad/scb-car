@@ -63,6 +63,7 @@ class HomeController extends Controller
           'users.id as id_q',
           'users.name as names',
           'users.status as status1',
+          'users.updated_at as updated_at1',
           'provinces.*',
           )
           ->leftjoin('provinces', 'provinces.id',  'users.address')
