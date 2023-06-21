@@ -1,4 +1,4 @@
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ url('img/favicon-32x32.png') }}" />
+<link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->

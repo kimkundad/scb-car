@@ -5,7 +5,8 @@
 		<title>รายชื่อลูกค้าผู้เข้าร่วมงาน Dealer New Car ไตรมาส 2 ปี 2566 </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" />
+		
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 		<!--end::Fonts-->
