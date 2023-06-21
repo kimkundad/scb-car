@@ -19,6 +19,7 @@ class MyUserController extends Controller
      */
     public function index()
     {
+        $count = User::whereNotIn('users.id', [1,2])->count();
         //
         $objs = DB::table('users')->select(
             'users.*',
@@ -34,7 +35,7 @@ class MyUserController extends Controller
 
             $objs->setPath('');
 
-        return view('admin.MyUser.index', compact('objs'));
+        return view('admin.MyUser.index', compact('objs', 'count'));
     }
 
 
@@ -44,6 +45,8 @@ class MyUserController extends Controller
             'search' => 'required'
           ]);
           $search = $request->get('search');
+
+          $count = User::whereNotIn('users.id', [1,2])->count();
 
           $objs = DB::table('users')->select(
             'users.*',
@@ -62,12 +65,15 @@ class MyUserController extends Controller
 
         return view('admin.MyUser.search', compact(
             'objs',
-            'search'
+            'search',
+            'count'
         ));
 
     }
 
     public function dealer_search(Request $request){
+
+        $count = User::whereNotIn('users.id', [1,2])->count();
 
         $this->validate($request, [
             'search' => 'required'
@@ -91,7 +97,8 @@ class MyUserController extends Controller
 
         return view('admin.MyUser.search2', compact(
             'objs',
-            'search'
+            'search',
+            'count'
         ));
 
     }

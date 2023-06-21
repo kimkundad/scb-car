@@ -36,7 +36,7 @@
                             </li>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">รายชื่อลูกค้ารวม {{ count($objs) }}</li>
+                            <li class="breadcrumb-item text-muted">รายชื่อลูกค้ารวม {{ ($count) }}</li>
                             <!--end::Item-->
                         </ul>
                         <!--end::Breadcrumb-->
