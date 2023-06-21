@@ -5,7 +5,7 @@
 		<title>{{ $objs->name }} </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="{{ url('img/favicon.ico') }}" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 		<!--end::Fonts-->
@@ -101,6 +101,7 @@
 													<img alt="Logo" src="{{ url('img/icon-positive-vote-2.svg') }}">
 												</div>
                                                 <p style="margin-bottom:9px; color:#181C32; font-size: 18px; font-weight:700">ลงทะเบียนเข้างานเรียบร้อยแล้ว!</p>
+												<div style="font-weight:600; font-size: 16px;">{{ $objs->updated_at }}</div>
                                                 @endif
 												<!--begin:Action-->
 											</div>
