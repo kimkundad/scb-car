@@ -40,7 +40,7 @@ class MyUserController extends Controller
             ->leftjoin('provinces', 'provinces.id',  'users.address')
             ->whereNotIn('users.id', [1,2])
             ->orderby('users.id', 'desc')
-            ->paginate(15);
+            ->paginate(100);
 
             $objs->setPath('');
 
@@ -75,7 +75,7 @@ class MyUserController extends Controller
             ->whereNotIn('users.id', [1,2])
             ->where('users.name', 'like', "%$search%")
             ->orderby('users.created_at', 'desc')
-            ->paginate(15);
+            ->paginate(100);
 
             $objs->setPath('');
 
@@ -114,7 +114,7 @@ class MyUserController extends Controller
             ->whereNotIn('users.id', [1,2])
             ->where('users.provider_id', 'like', "%$search%")
             ->orderby('users.created_at', 'desc')
-            ->paginate(15);
+            ->paginate(100);
 
             $objs->setPath('');
 
@@ -135,6 +135,20 @@ class MyUserController extends Controller
     public function create()
     {
         //
+        $rand = rand(100,999);
+        $count = User::where('id', $rand)->count();
+        if($count == 0){
+            $data['rand'] = $rand;
+        }else{
+            $rand = rand(100,999);
+            if($count == 0){
+            $data['rand'] = $rand;
+            }else{
+                $rand = rand(100,999);
+                $data['rand'] = $rand;
+            }
+        }
+
         $province = province::all();
         $data['province'] = $province;
         $data['method'] = "post";

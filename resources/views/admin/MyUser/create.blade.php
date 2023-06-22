@@ -1,8 +1,8 @@
 @extends('admin.layouts.template')
 
 @section('title')
-    <title>วงษ์พาณิชย์รีไซเคิล ระยอง จำกัด</title>
-    <meta name="description" content=" รายละเอียด วงษ์พาณิชย์รีไซเคิล ระยอง จำกัด">
+<title>รายชื่อลูกค้าผู้เข้าร่วมงาน Dealer New Car</title>
+<meta name="description" content="รายชื่อลูกค้าผู้เข้าร่วมงาน Dealer New Car">
 @stop
 @section('stylesheet')
 
@@ -21,7 +21,7 @@
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            สร้างรายชื่อลูกค้า</h1>
+                            เพิ่มผู้เข้าร่วม</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -36,7 +36,7 @@
                             </li>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">สร้าง รายชื่อลูกค้าใหม่</li>
+                            <li class="breadcrumb-item text-muted">เพิ่มผู้เข้าร่วม</li>
                             <!--end::Item-->
                         </ul>
                         <!--end::Breadcrumb-->
@@ -65,7 +65,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                                        <input type="text" name="phone" class="form-control form-control-lg form-control-solid" placeholder="D001" value="{{old('phone') ? old('phone') : ''}}">
+                                        <input type="text" name="phone" class="form-control form-control-lg form-control-solid" placeholder="D001" value="D{{$rand}}">
                                     
                                         @if ($errors->has('phone'))
                                             <div class="fv-plugins-message-container invalid-feedback">
@@ -187,25 +187,7 @@
         <div id="kt_app_footer" class="app-footer">
             <!--begin::Footer container-->
             <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-                <!--begin::Copyright-->
-                <div class="text-dark order-2 order-md-1">
-                    <span class="text-muted fw-semibold me-1">2022&copy;</span>
-                    <a href="" target="_blank" class="text-gray-800 text-hover-primary">บริษัท วงษ์พาณิชย์รีไซเคิล ระยอง จำกัด</a>
-                </div>
-                <!--end::Copyright-->
-                <!--begin::Menu-->
-                <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                    <li class="menu-item">
-                        <a href="{{ url('about') }}" target="_blank" class="menu-link px-2">เกี่ยวกับวงษ์พาณิชย์</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ url('contatermct') }}" target="_blank" class="menu-link px-2">นโยบายส่วนบุคคล</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{ url('contact') }}" target="_blank" class="menu-link px-2">ติดต่อเรา</a>
-                    </li>
-                </ul>
-                <!--end::Menu-->
+                
             </div>
             <!--end::Footer container-->
         </div>

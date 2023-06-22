@@ -39,7 +39,7 @@
 											<div style="text-align:center; margin:0 60px 34px 60px">
 												<!--begin:Logo-->
 												<div style="margin-bottom: 10px">
-													<a href="https://keenthemes.com" rel="noopener" target="_blank">
+													<a>
 														<img alt="Logo" src="{{ url('/img/SCB.BK_BIG-b5007084.png') }}" style="height: 55px" />
 													</a>
 												</div>
@@ -66,7 +66,13 @@
 															<h3 style="text-align:center; color:#181C32; font-size: 18px; font-weight:600; margin-bottom: 5px">{{ $objs->birthday }}</h3>
 															<!--end:Description-->
 															<!--begin:Total-->
-															<h3 style="text-align:center; color:#181C32; font-size: 18px; font-weight:600; margin-bottom: 5px">{{ $objs->PROVINCE_NAME }}</h3>
+															<h3 style="text-align:center; color:#181C32; font-size: 18px; font-weight:600; margin-bottom: 5px">
+																@if($objs->phone == 'D043' || $objs->phone == 'D044')
+																	นนทบุรี,ปทุมธานี,กทม
+																	@else
+																	{{ $objs->PROVINCE_NAME }}
+																	@endif
+															</h3>
 															<!--end:Total-->
 														</div>
 														<!--end:Item-->
@@ -101,7 +107,7 @@
 													<img alt="Logo" src="{{ url('img/icon-positive-vote-2.svg') }}">
 												</div>
                                                 <p style="margin-bottom:9px; color:#181C32; font-size: 18px; font-weight:700">ลงทะเบียนเข้างานเรียบร้อยแล้ว!</p>
-												<div style="font-weight:600; font-size: 16px;">{{ $objs->updated_at1 }}</div>
+												<div style="font-weight:600; font-size: 16px;">{{ $objs->zipcode }}</div>
                                                 @endif
 												<!--begin:Action-->
 											</div>

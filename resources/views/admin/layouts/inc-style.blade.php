@@ -16,5 +16,34 @@
     color: #c5c5d8;
 	font-size: 16px;
 }
+.btn.btn-primary {
+    border-color: #7a58bf;
+    background-color: #7a58bf;
+}
+.btn.btn-primary:hover {
+    border-color: #7a58bf;
+    background-color: #7a58bf;
+}
+.btn-check:active+.btn.btn-primary, .btn-check:checked+.btn.btn-primary, .btn.btn-primary.active, .btn.btn-primary.show, .btn.btn-primary:active:not(.btn-active), .btn.btn-primary:focus:not(.btn-active), .btn.btn-primary:hover:not(.btn-active), .show>.btn.btn-primary {
+
+    border-color: #7a58bf;
+    background-color: #7a58bf!important;
+}
+.btn.btn-success {
+    border-color: #7a58bf;
+    background-color: #7a58bf;
+}
+.btn.btn-success:hover {
+    border-color: #7a58bf;
+    background-color: #7a58bf;
+}
+.btn-check:active+.btn.btn-success, .btn-check:checked+.btn.btn-success, .btn.btn-success.active, .btn.btn-success.show, .btn.btn-success:active:not(.btn-active), .btn.btn-success:focus:not(.btn-active), .btn.btn-success:hover:not(.btn-active), .show>.btn.btn-success {
+
+    border-color: #7a58bf;
+    background-color: #7a58bf!important;
+}
+.text-hover-primary:hover{
+	color: #7a58bf!important;
+}
 		</style>
 

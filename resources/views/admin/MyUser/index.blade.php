@@ -67,7 +67,7 @@
                                 <!--begin::Label-->
                                 <div class="d-flex fw-semibold align-items-center my-3">
                                     <!--begin::Bullet-->
-                                    <div class="bullet w-8px h-3px rounded-2 bg-primary me-3"></div>
+                                    <div class="bullet w-8px h-3px rounded-2 bg-primary me-3" style="background-color: #7a58bf!important; "></div>
                                     <!--end::Bullet-->
                                     <!--begin::Label-->
                                     <div class="text-gray-500 flex-grow-1 me-4">เข้าร่วมแล้ว</div>
@@ -106,7 +106,7 @@
                             </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            สร้างใหม่
+                            เพิ่มผู้เข้าร่วม
                         </a>
                     </div>
                     <!--end::Actions-->
@@ -176,7 +176,7 @@
                                         <tr id="{{$item->id_q}}">
                                             <td>
                                                 <div class="symbol symbol-50px">
-                                                    <img src="{{ url('img/7153150.png') }}" alt="img user">
+                                                    <img src="{{ url('img/User_Avatar_Human_.png') }}" alt="img user">
                                                 </div>
                                             </td>
                                             <td>
@@ -194,11 +194,17 @@
                                                 {{ $item->birthday }}
                                             </td>
                                             <td>
+                                                @if($item->phone == 'D043' || $item->phone == 'D044')
+                                                นนทบุรี,ปทุมธานี,กทม
+                                                @else
                                                 {{ $item->PROVINCE_NAME }}
+                                                @endif
+                                                
                                             </td>
-                                            <td class="text-end pe-12">
+                                            <td class="text-end pe-12" style="width: 200px;">
                                                 @if($item->status == 1)
-                                                <span class="badge py-3 px-4 fs-7 badge-light-success">Complated</span>
+                                                <span class="badge py-3 px-4 fs-7 badge-light-success">Check in</span><br>
+                                                <span class="text-dark">{{ $item->zipcode }}
                                                 @else
                                                 <span class="badge py-3 px-4 fs-7 badge-light-warning">On Hold</span>
                                                 @endif
@@ -318,7 +324,7 @@ var KTCardsWidget17 = function () {
 
         // Init 
         drawCircle('#E4E6EF', options.lineWidth, 100 / 100); 
-        drawCircle(KTUtil.getCssVariableValue('--kt-primary'), options.lineWidth, {{ $percent }});
+        drawCircle('#7a58bf', options.lineWidth, {{ $percent }});
     }
 
     // Public methods
