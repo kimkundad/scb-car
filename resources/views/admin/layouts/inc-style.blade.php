@@ -45,5 +45,31 @@
 .text-hover-primary:hover{
 	color: #7a58bf!important;
 }
+.pagination {
+    --bs-pagination-color: #7a58bf;
+    --bs-pagination-bg: #7a58bf;
+    --bs-pagination-border-color: #7a58bf;
+    --bs-pagination-hover-color: #7a58bf;
+    --bs-pagination-hover-bg: #7a58bf;
+    --bs-pagination-hover-border-color: #7a58bf;
+    --bs-pagination-focus-color: #7a58bf;
+    --bs-pagination-focus-bg: #7a58bf;
+    --bs-pagination-focus-box-shadow: #7a58bf;
+    --bs-pagination-active-color: #7a58bf;
+    --bs-pagination-active-bg: #7a58bf;
+    --bs-pagination-active-border-color: #7a58bf;
+    --bs-pagination-disabled-color: #7a58bf;
+    --bs-pagination-disabled-bg: #7a58bf;
+    --bs-pagination-disabled-border-color: #7a58bf;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+.page-item .page-link .next {
+    background-color: #B5B5C3;
+   }
+   .page-item:hover:not(.active):not(.offset):not(.disabled) .page-link .next {
+    background-color: #B5B5C3; }
 		</style>
 
