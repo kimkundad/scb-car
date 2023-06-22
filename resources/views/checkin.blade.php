@@ -98,7 +98,7 @@
                                                 @if($objs->status === 0)
 												<!--begin:Action-->
                                                 <div id="checkin_div">
-												<a id="checkin" style="background-color:#50cd89; border-radius:6px;display:inline-block; padding:11px 19px; color: #FFFFFF; font-size: 14px; font-weight:500;">
+												<a id="checkin" style="background-color:#7a58bf; border-radius:6px;display:inline-block; padding:11px 19px; color: #FFFFFF; font-size: 14px; font-weight:500;">
                                                     ลงทะเบียนเข้างาน
                                                 </a>
                                                 </div>

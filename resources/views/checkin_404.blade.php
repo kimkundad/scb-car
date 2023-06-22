@@ -46,11 +46,11 @@
                                                 <div class="separator separator-dashed" style="margin:15px 0;"></div>
 												<!--end:Logo-->
                                                 <div style="margin-bottom: 15px">
-													<img alt="Logo" src="{{ url('img/6009660.png') }}" style="width: 85%">
+													<img alt="Logo" src="{{ url('img/Broken_Files_v3.png') }}" style="width: 85%">
 												</div>
 												<!--begin:Text-->
 												<div style="font-size: 14px; margin-top:20px; font-weight: 500; margin-bottom: 42px; ">
-													<p style="margin-bottom:12px; color:#7E8299; font-size: 22px; ">ไม่พบรายชื่อลูกค้าผู้เข้าร่วม</p>
+													<p style="margin-bottom:12px; color:#7E8299; font-size: 20px; ">ไม่พบรายชื่อลูกค้าผู้เข้าร่วม</p>
 												</div>
 												
 											</div>
