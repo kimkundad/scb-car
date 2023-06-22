@@ -197,11 +197,16 @@
                                                 {{ $item->PROVINCE_NAME }}
                                                 @endif
                                             </td>
-                                            <td class="text-end pe-12">
+                                            <td class="text-end pe-12" style="width: 200px;">
                                                 @if($item->status == 1)
-                                                <span class="badge py-3 px-4 fs-7 badge-light-success">Complated</span>
+                                                <a href="{{ url('checkin?code=').$item->phone }}" target="_blank">
+                                                <span class="badge py-3 px-4 fs-7 badge-light-success">Check in</span>
+                                                </a><br>
+                                                <span class="text-dark">{{ $item->zipcode }}
                                                 @else
+                                                <a href="{{ url('checkin?code=').$item->phone }}" target="_blank">
                                                 <span class="badge py-3 px-4 fs-7 badge-light-warning">On Hold</span>
+                                                </a>
                                                 @endif
                                             </td>
                                             <td class="text-end">

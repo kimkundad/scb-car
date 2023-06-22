@@ -110,6 +110,20 @@
                                     <!--end::Col-->
                                 </div>
 
+                                @if($objs->status == 1)
+                                <div class="row mb-6">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">เวลาเข้างาน</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ $objs->zipcode }}" readonly>
+                                
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                @endif
+
 
                                 <div class="row mb-6">
                                     <!--begin::Label-->

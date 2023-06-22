@@ -232,20 +232,43 @@ class MyUserController extends Controller
     public function update(Request $request, $id)
     {
         //
+                $obj = User::find($id);
+              
                 $this->validate($request, [
                     'phone' => 'required',
                     'name' => 'required',
                     'provider_id' => 'required'
                 ]);
 
-                $objs = User::find($id);
-                $objs->name = $request['name'];
-                $objs->birthday = $request['birthday'];
-                $objs->phone = $request['phone'];
-                $objs->provider_id = $request['provider_id'];
-                $objs->address = $request['address'];
-                $objs->status = $request['status'];
-                $objs->save();
+                if($request['status'] == 1){
+
+                    $objs = User::find($id);
+                    $objs->name = $request['name'];
+                    $objs->birthday = $request['birthday'];
+                    $objs->phone = $request['phone'];
+                    $objs->provider_id = $request['provider_id'];
+                    $objs->address = $request['address'];
+                    $objs->status = $request['status'];
+                    if($obj->status == 0){
+                        $objs->zipcode = date("Y-m-d H:i:s");
+                    }
+                    $objs->save();
+
+                }else{
+
+                    $objs = User::find($id);
+                    $objs->name = $request['name'];
+                    $objs->birthday = $request['birthday'];
+                    $objs->phone = $request['phone'];
+                    $objs->provider_id = $request['provider_id'];
+                    $objs->address = $request['address'];
+                    $objs->status = $request['status'];
+                    $objs->zipcode = ' ';
+                    $objs->save();
+
+                }
+
+                
 
 
               return redirect(url('admin/MyUser/'.$id.'/edit'))->with('edit_success','คุณทำการเพิ่มอสังหา สำเร็จ');
