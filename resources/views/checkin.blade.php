@@ -107,7 +107,6 @@
 													<img alt="Logo" src="{{ url('img/icon-positive-vote-2.svg') }}">
 												</div>
                                                 <p style="margin-bottom:9px; color:#181C32; font-size: 18px; font-weight:700">ลงทะเบียนเข้างานเรียบร้อยแล้ว!</p>
-												<div style="font-weight:600; font-size: 16px;">{{ $objs->zipcode }}</div>
                                                 @endif
 												<!--begin:Action-->
 											</div>
@@ -160,7 +159,7 @@
                         });
         
                         document.getElementById('checkin_div').innerHTML = "";
-                        $("#checkin_div").html('<div style="margin-bottom: 15px"><img alt="Logo" src="{{ url('img/icon-positive-vote-2.svg') }}"></div><p style="margin-bottom:9px; color:#181C32; font-size: 18px; font-weight:700">ลงทะเบียนเข้างานเรียบร้อยแล้ว!</p><div style="font-weight:600; font-size: 16px;">'+data.data.date_time+'</div>');
+                        $("#checkin_div").html('<div style="margin-bottom: 15px"><img alt="Logo" src="{{ url('img/icon-positive-vote-2.svg') }}"></div><p style="margin-bottom:9px; color:#181C32; font-size: 18px; font-weight:700">ลงทะเบียนเข้างานเรียบร้อยแล้ว!</p>');
                     }
                     }
                 });
